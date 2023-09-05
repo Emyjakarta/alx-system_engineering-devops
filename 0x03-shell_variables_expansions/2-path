@@ -1,2 +1,2 @@
 #!/bin/bash
-alias PATH='mkdir /action; cd /action'
+export PATH="PATH:/action"
