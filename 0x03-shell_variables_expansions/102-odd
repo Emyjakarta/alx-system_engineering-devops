@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l | grep -n " " | grep -v "^[0-9]*[02468]:" | cut -d ":" -f -2  
+cat -n | grep [13579][[:space:]] | tr -s ' ' | cut -f2
