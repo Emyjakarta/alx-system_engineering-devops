@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -la | tr -s ' '| cut -d' ' -f9 
