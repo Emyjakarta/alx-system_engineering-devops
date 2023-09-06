@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la | tr -s ' '| cut -d' ' -f9 
+ls -l | grep -n " " | grep -v "^[0-9]*[02468]:" | cut -d ":" -f -2  
