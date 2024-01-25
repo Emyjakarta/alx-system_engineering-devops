@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays hours from 0 to 12 and minutes from 1 to 59.
+
+# Hour counter
+hour=0
+
+# Using a while loop to iterate over hours
+while [ $hour -le 12 ]; do
+	echo "Hour: $hour"
+
+	# Minute counter
+	minute=1
+
+	# Using a nested while loop to iterate over minutes
+	while [ $minute -le 59 ]; do
+		echo $minute
+		((minute++))
+	done
+
+	((hour++))
+done
