@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script displays numbers from 1 to 20 and superstitions based on certain iterations.
+# This script will display numbers from 1 to 20 and superstitions based on certain iterations.
 
 # Counter
 count=1

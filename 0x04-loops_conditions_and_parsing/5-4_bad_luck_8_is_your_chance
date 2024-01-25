@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script loops from 1 to 10 and displays messages based on certain iterations.
+# This script will loop from 1 to 10 and display messages based on certain iterations.
 
 # Counter
 count=1

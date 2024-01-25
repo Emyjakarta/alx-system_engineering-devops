@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script lists the content of the current directory in a list format
+# This script will list the content of the current directory in a list format
 # Only the part of the name after the first dash is displayed
 
 # Using a for loop to iterate over files in the current directory

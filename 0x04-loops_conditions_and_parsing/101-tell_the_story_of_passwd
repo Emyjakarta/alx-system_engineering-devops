@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script tells the story of /etc/passwd using the while loop + IFS.
+# This script will tell the story of /etc/passwd using the while loop + IFS.
 
 # Reading the /etc/passwd file line by line using a while loop
 myfile="/etc/passwd"
