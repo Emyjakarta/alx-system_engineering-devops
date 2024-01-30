@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-regex = /hbt*n/
+regex = /hbt+n/
 
 ARGV.each do |arg|
   match = arg.scan(regex).join
