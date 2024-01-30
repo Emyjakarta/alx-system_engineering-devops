@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-regex = /h[bt]*n/
+regex = /^h.n$/
 
 ARGV.each do |arg|
-  match = arg.scan(regex).join("\n")
+  match = arg.scan(regex).join
   puts match
 end    

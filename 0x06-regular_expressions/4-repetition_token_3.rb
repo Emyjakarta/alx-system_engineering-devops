@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-regex = /h[bt]*n/
+regex = /hbo?n|hbt+n/
 
 ARGV.each do |arg|
   match = arg.scan(regex).join("\n")
