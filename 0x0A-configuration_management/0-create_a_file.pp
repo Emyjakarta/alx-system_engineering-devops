@@ -1,3 +1,5 @@
+# Manifest to create a file "school" in /tmp directory
+
 file { '/tmp/school':
   ensure  => file,
   mode    => '0744',
