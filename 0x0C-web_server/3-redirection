@@ -27,8 +27,8 @@ sed -i '/server_name _;/{
 # Start the Nginx service
 service nginx restart
 
-# if [[ ! $? ]]; then
-if [[ $? -ne 0 ]]; then
+if [[ ! $? ]]; then
+#if [[ $? -ne 0 ]]; then
 	echo "ERROR: Failed to start Nginx" 1>&2
 	exit 1
 fi
