@@ -38,9 +38,9 @@ sed -i '/server_name _;/{
 rm /tmp/new_config
 
 # Start the Nginx service
-service nginx start
+service nginx restart
 
 if [[ ! $? ]]; then
-	echo "ERROR: Failed to start Nginx" 1>&2
+	echo "ERROR: Failed to restart Nginx" 1>&2
 	exit 1
 fi
