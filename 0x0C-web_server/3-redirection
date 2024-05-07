@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
-# Update the package list and install Nginx
+# Update the package list and install Nginx if not present
 apt-get update
 apt-get install -y nginx
 
