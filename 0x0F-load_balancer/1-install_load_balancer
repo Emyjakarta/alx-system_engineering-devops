@@ -2,6 +2,15 @@
 # script that installs and configures the HAproxy load balancer. It configures
 # the server to send traffic to two web servers. The load balanceing algorithm
 # is round-robin.
+
+# Function to resolve IP address from hostname
+resolve_ip() {
+	hostname=$1
+	ip=$(dig +short $hostname)
+	echo "$ip"
+}
+
+# Configuration for HAProxy
 config="
 frontend emyjakarta_frontend
 	bind *:80
@@ -10,10 +19,10 @@ frontend emyjakarta_frontend
 
 backend emyjakarta_backend
 	balance roundrobin
-	server 527465-web-01 web-01.emyjakarta.tech:80 check
-	server 527465-web-02 web-02.emyjakarta.tech:80 check
+	server 527465-web-01 $(resolve_ip web-01.emyjakarta.tech):80 check
+	server 527465-web-02 $(resolve_ip web-02.emyjakarta.tech):80 check
 "
-
+# Check if the user is root
 if [ $EUID -ne 0 ]; then
 	echo "You must be root"
 	exit 1
