@@ -3,6 +3,14 @@
 # the server to send traffic to two web servers. The load balanceing algorithm
 # is round-robin.
 
+# Define variables for web server IP addresses
+WEB_SERVER_1_IP="34.224.62.190"
+WEB_SERVER_2_IP="34.239.253.87"
+
+# Add entries to /etc/hosts
+echo "$WEB_SERVER_1_IP web-01.emyjakarta.tech" >> /etc/hosts
+echo "$WEB_SERVER_2_IP web-02.emyjakarta.tech" >> /etc/hosts
+
 # Function to resolve IP address from hostname
 resolve_ip() {
 	hostname=$1
