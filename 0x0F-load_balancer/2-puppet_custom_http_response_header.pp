@@ -22,11 +22,13 @@ exec { 'apt-update':
 #}
 
 # Configure Nginx to add the custom HTTP header
-file { '/etc/nginx/sites-available/default':
-  ensure  => present,
-  content => template('/home/ubuntu/alx-system_engineering-devops/0x0F-load_balancer/templates/nginx_default.erb'),
+# file { '/etc/nginx/sites-available/default':
+file { '/etc/nginx/conf.d/2-custom_response_headers.conf':
+  ensure => present,
+#  content => template('/home/emyjakarta273/alx-system_engineering-devops/0x0F-load_balancer/templates/nginx_default.erb'),
 #  require => Package['nginx'],
-  notify  => Service['nginx'],
+content  => "add_header X-Served-By ${hostname};\n",
+  notify => Service['nginx'],
 }
 
 # Ensure Nginx is running
