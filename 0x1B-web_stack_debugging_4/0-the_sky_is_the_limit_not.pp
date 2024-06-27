@@ -1,19 +1,13 @@
-# This Puppet manifest configures Nginx to handle high concurrency loads
+# Manuscript that increases the amount of traffic an Nginx server can handle
 
-exec { 'install_nginx':
-  command => '/usr/sbin/apt-get install -y nginx',
-  unless  => 'dpkg -l | grep nginx',
+# Increase the ULIMIT of the default file
+exec { 'fix--for-nginx':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
 }
 
-file { '/etc/nginx/nginx.conf':
-  ensure  => file,
-  content => template('nginx/nginx.conf.erb'),
-  notify  => Service['nginx'],
+# Restart Nginx
+-> exec { 'nginx-restart':
+  command => 'nginx restart',
+  path    => '/etc/init.d/'
 }
-
-service { 'nginx':
-  ensure => running,
-  enable => true,
-  require => Exec['install_nginx'],
-}
-
